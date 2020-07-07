@@ -1,0 +1,30 @@
+<div class="text-center text-primary mt-5" style="font-size: xx-large; font-weight: 600;">Youtube to Mp3 Api</div>
+{{#if Title}}
+<div class="text-center text-primary mt-5" style="font-size: x-large; font-weight: 600;"><span
+        class="text-danger">{{Title}}</span></div>
+{{else}}
+<div class="text-center text-primary mt-5" style="font-size: x-large; font-weight: 600;"><span class="text-danger">Admin
+        Login</span></div>
+
+{{/if}}
+
+<div class="login-form">
+    <form method="post">
+        <h2 class="text-center">Log in</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" required="required" name="user"
+                value="{{Username}}">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" required="required" name="pass">
+        </div>
+        {{#if Err}}
+        <div class="form-group">
+            <div class="text text-danger" style="font-size: 15;">* {{Err}}</div>
+        </div>
+        {{/if}}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>
+    </form>
+</div>

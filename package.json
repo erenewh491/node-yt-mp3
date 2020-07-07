@@ -1,0 +1,28 @@
+{
+  "name": "ytmp3api",
+  "version": "1.0.0",
+  "description": "A youtube to Mp3 Api with User Panel and Admin Panel",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "UmaR",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.19",
+    "nodemon": "^2.0.4",
+    "uuid-apikey": "^1.4.6",
+    "youtube-mp3-downloader": "^0.6.8"
+  }
+}

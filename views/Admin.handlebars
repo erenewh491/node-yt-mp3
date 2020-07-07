@@ -1,0 +1,139 @@
+<div class="text-center text-primary mt-2" style="font-size: xx-large; font-weight: 600;">Youtube to Mp3 Api (Admin
+    Panel)</div>
+<div class="text-center mt-5" style="font-size: x-large; font-weight: 600;">
+    <a href="/adminpanel/dashboard/search/">
+        Click here to search players
+    </a></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="login-form">
+                <form method="post">
+                    <h2 class="text-center">Add new API</h2>
+                    <input type="hidden" name="FormName" value="Add" />
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" required="required" name="name"
+                            value="{{Name}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required="required" name="email"
+                            value="{{Email}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="IP Address" required="required" name="ip"
+                            value="{{IP}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Max Requests" required="required"
+                            name="MaxReq" value="{{MaxReq}}">
+                    </div>
+
+                    {{#if Err}}
+                    <div class="form-group">
+                        <div class="text text-danger" style="font-size: 15;">{{Err}}</div>
+                    </div>
+                    {{/if}}
+                    {{#if Scs}}
+                    <div class="form-group">
+                        <div class="text text-success" style="font-size: 15;"><span id="scs">{{Scs}}</span></div>
+                    </div>
+                    {{/if}}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Add!!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="login-form">
+                <form method="post">
+                    <h2 class="text-center">Delete API</h2>
+                    <input type="hidden" name="FormName" value="Delete" />
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" name="delEmail"
+                            value="{{delEmail}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="IP Address" name="delip" value="{{delIP}}">
+                    </div>
+                    {{#if delErr}}
+                    <div class="form-group">
+                        <div class="text text-danger" style="font-size: 15;">{{delErr}}</div>
+                    </div>
+                    {{/if}}
+                    {{#if delScs}}
+                    <div class="form-group">
+                        <div class="text text-success" style="font-size: 15;">{{delScs}}</div>
+                    </div>
+                    {{/if}}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Delete!!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="login-form">
+                <form method="post">
+                    <h2 class="text-center">Update API</h2>
+                    <input type="hidden" name="FormName" value="Update" />
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" name="upEmail" value="{{upEmail}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="IP Address" name="upip" value="{{upIP}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="Max Requests" required="required"
+                            name="upMaxReq" value="{{upMaxReq}}">
+                    </div>
+                    {{#if upErr}}
+                    <div class="form-group">
+                        <div class="text text-danger" style="font-size: 15;">{{upErr}}</div>
+                    </div>
+                    {{/if}}
+                    {{#if upScs}}
+                    <div class="form-group">
+                        <div class="text text-success" style="font-size: 15;">{{upScs}}</div>
+                    </div>
+                    {{/if}}
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Update!!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center text-primary mt-5" style="font-size: x-large; font-weight: 600;">All Api Details</div>
+<div class="container mt-2 w-100 align-self-center text-center">
+    <table class="table table-striped table-bordered" style="border:black 2px solid;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Last Used ID</th>
+                <th scope="col">Max Requests</th>
+                <th scope="col">Allowed IP</th>
+                <th scope="col">Api Key</th>
+                <th scope="col">Change Pass</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each members}}
+            <tr>
+                <td>{{this.Name}}</td>
+                <td>{{this.Email}}</td>
+                <td>{{this.LastUsedID}}</td>
+                <td>{{this.MaxRequests}}</td>
+                <td><code>{{this.IP}}</code></td>
+                <td><code>{{this.ApiKey}}</code></td>
+                <td><a href="/adminpanel/SetPass/{{this._id}}">Click Here</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
